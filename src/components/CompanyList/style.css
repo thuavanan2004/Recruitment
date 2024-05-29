@@ -1,0 +1,59 @@
+.list-company .box-main .card-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.list-company .box-main .card-item .card-image {
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+}
+.list-company .box-main .card-item .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    border: #eee9e9 solid 0.5px;
+}
+ 
+.list-company .box-main .ant-card-body {
+    height: 120px;
+    padding: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px;
+}
+.list-company .box-main .card-item .card-content {
+    flex: 1;
+}
+.list-company .box-main .card-item .card-content .title {
+    font-weight: 550;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.list-company .box-main .card-item .card-content .company-name {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #948f8f;
+    font-weight: 400;
+    
+}
+.list-company .inner-wrap {
+    display: flex;
+    
+}
+.list-company .inner-wrap .item {
+    background-color: #ddd;
+    margin-left: 5px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 550;
+    color: rgb(75, 72, 72);
+}
+.ant-result-icon span {
+    color: #009643 !important;
+}

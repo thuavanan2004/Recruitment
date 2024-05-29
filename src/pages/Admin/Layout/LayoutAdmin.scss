@@ -1,0 +1,54 @@
+.header{
+    display: flex;
+    background-color: #fff;
+    border: solid 1px #ddd;
+    &__logo-fold{
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: solid #ddd 1px;
+        transition: all 0.2s;
+    }
+    &__logo{
+        width: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: solid #ddd 1px;
+        transition: all 0.2s;
+
+    }
+    
+    &__nav{
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        
+        
+    }
+    &__nav-left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+        padding: 20px;
+
+        &--collapsed{
+            margin-right: 20px;
+        }
+    }
+    &__nav-notify{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       margin-right: 30px;
+    }
+}
+.sider {
+    height: 100vh;
+}
+.content {
+    padding: 30px;
+}

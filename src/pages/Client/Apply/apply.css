@@ -1,0 +1,83 @@
+.job-detail .name-job {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.job-detail .job-introduce-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 450;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.job-detail .anticon {
+    font-size: 20px;
+    color: #009643;
+}
+.job-detail .button-apply {
+    width: 100%;
+    background: #00b14f;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.job-detail .ant-btn:hover {
+    width: 100%;
+    background: #00b14f !important;
+    color: #fff !important;
+    border: none !important;
+}
+.job-detail .company-info {
+    padding: 20px;
+}
+.job-detail .ant-pagination-item{
+    border: solid 1px #00b14f !important;
+    color: #00b14f !important;
+}
+.job-detail .ant-pagination-item a{
+    color: #00b14f !important;
+
+}
+.job-detail .ant-pagination {
+    display: block;
+    text-align: center;
+}
+
+.job-detail .company-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.job-detail .company-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.job-detail .company-info strong {
+    font-weight: bold;
+}
+
+.job-detail .company-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.job-detail .company-image {
+    margin-top: 20px;
+}
+
+.job-detail .company-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+/* form-apply */
+.form-apply .ant-btn {
+    background: #009643 !important;
+    color: #fff;
+}
+
+/* form-apply */

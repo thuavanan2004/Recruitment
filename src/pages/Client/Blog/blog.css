@@ -1,0 +1,81 @@
+.page-blog .page-blog-header{
+    background: url("../../../assets//images//blog-header.webp");
+    padding: 30px 10px;
+    background-repeat: no-repeat;
+}
+.page-blog .blog-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.featured-artcle h2 {
+    margin: 20px 0;
+}
+.featured-artcle .list-articles .box-articles-item, .box-articles-left{
+    background: #f5f5ef;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+
+  
+} .featured-artcle .list-articles .box-articles-item:not(:last-child){
+    margin-bottom: 20px;
+}
+.featured-artcle .list-articles .box-articles-item .articles-category {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0;
+    color: #009643;
+}
+.featured-artcle .list-articles .box-articles-left .articles-category {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0;
+    color: #009643;
+}
+.featured-artcle .list-articles .box-articles-item .articles-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.featured-artcle .list-articles .box-articles-left .articles-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.featured-artcle .list-articles .box-articles-item .box-aricles-main {
+    padding: 0 20px ;
+}
+.featured-artcle .list-articles .box-articles-left .box-aricles-main {
+    padding: 0 20px ;
+}
+.articles-createAt{
+    margin-bottom: 10px;
+    color: #999;
+}
+.box-articles-left .articles-image {
+    width: 100%;
+    aspect-ratio: 3/1 !important;
+} 
+
+.featured-artcle .list-articles .box-articles-item .articles-image {
+    height: 100%;
+    max-width: 206px;
+    overflow: hidden;
+    width: auto;
+}
+.featured-artcle .list-articles .box-articles-item .articles-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.featured-artcle .list-articles .box-articles-left {
+    display: flex ;
+    flex-direction: column;
+    height: 100%;
+}

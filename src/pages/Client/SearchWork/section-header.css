@@ -1,0 +1,86 @@
+.section-header {
+    background: linear-gradient(0deg, #fff, #e4fff0);
+    padding: 20px 0;
+    position: relative;
+    z-index: 999;
+
+}
+.section-header .header-box h2{
+    font-size: 33px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #009643;
+}
+.section-header .header-box p{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+.form-search-job .ant-btn {
+    width: 100%;
+    background-color: #009643;
+    color: #fff;
+    font-weight: 600;
+}
+.form-search-job .ant-btn:active {
+    background-color: inherit !important; /* Hoặc giá trị khác tùy thuộc vào mục đích */
+    color: inherit !important;
+}
+.form-search-job .ant-btn:hover {
+    background-color: inherit !important; /* Hoặc giá trị khác tùy thuộc vào mục đích */
+    color: inherit !important;
+}
+.section-header .img-bg-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.section-header .img-bg-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.section-header .img-robot {
+    position: absolute;
+    right: 20px;
+    top: 15px;  
+    width: 100px;
+    height: auto;
+}
+.box-work-market .slick-slide {
+    height: 230px;
+}
+.box-work-market .slick-slide h3 {
+    height: 230px !important;
+}
+@media (max-width: 1199.98px){
+    .section-header .img-bg-left, .img-bg-right{
+        width: 10px;
+    }
+    .section-header .img-robot {
+        display: none;
+    }
+    
+}
+@media (max-width: 992px){
+    h2 {
+        font-size: 29px;
+    }
+    
+}
+@media (max-width: 576px){
+    .box-work-market .slick-slide {
+        height: 90px;
+    }
+    .box-work-market .slick-slide h3 {
+        height: 90px !important;
+    }
+    h2 {
+        font-size: 25px !important;
+    }
+    p {
+        font-size: 15px !important;
+    }
+}

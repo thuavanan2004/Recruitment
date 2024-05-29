@@ -1,0 +1,24 @@
+if(window.innerWidth<1100){window.elNotification="#navbar-mobile #nav-notification";}else{window.elNotification=".navbar #nav-notification";}
+var notification=new Vue({el:window.elNotification,data(){return{open:false,fetched:false,notifications:[],loading:false,loadedAll:false,newNotification:window.countNotification,}},computed:{isFirstLoading(){return this.fetched==false},ignoredIds(){return this.notifications.map(i=>i.id).join(',')},notiTitle(){if(this.newNotification>0){return `Bạn có ${this.newNotification} thông báo chưa đọc`}
+return 'Không có thông báo mới'}},mounted(){const vm=this
+const target=$(window.elNotification);$(document).mouseup(function(e){if(!target.is(e.target)&&target.has(e.target).length===0){vm.open=false}});},updated(){var vm=this
+$('[data-toggle="tooltip-body"]').tooltip({container:'body'});$(window.elNotification+' li.body.done').on('scroll',function(){if($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight){vm.fetchData()}})
+$(window.elNotification+' .dropdown-menu').on('click',function(event){event.stopPropagation();});},methods:{markViewed(notification){notification.viewed=1
+if(this.newNotification>=1){this.newNotification--}
+$.ajax({url:`/notification/${notification.id}/change-status`,type:'POST',data:{status:1}})},toggleViewed(notification){notification.viewed=notification.viewed==1?0:1
+if(notification.viewed==0){this.newNotification++}else if(this.newNotification>=1){this.newNotification--}
+$.ajax({url:`/notification/${notification.id}/change-status`,type:'POST',data:{status:notification.viewed}})},markViewedAll(){this.notifications.map(i=>i.viewed=1)
+this.newNotification=0
+$.ajax({url:'/notification/mark-viewed-all',type:'POST'})},handleOpenNotification(notification){const modal=notification?.modal;if(modal){$(modal)?.show();$("body").css("overflow","hidden");if(modal==='#modal-cv-competitive-notification'){$(".overlay-modal-cv-competitive-notification").show();this.getJobCompetitionAI(notification?.data?.job_id);}}
+this.markViewed(notification);},async getJobCompetitionAI(jobId){if(!jobId){return;}
+const response=await $.ajax({type:'GET',url:'/job-detail-competition',data:{id:jobId,},}).done(function(response){$('#modal-cv-competition-ai-box-job').html(response);$('#modal-cv-competition-ai-box-job .icon-verified-employer-tooltip')?.tooltip()?.each(function(){$(this).data('bs.tooltip').tip().addClass('icon-verified-employer-tooltip');});});},async countNewNotification(){const response=await $.ajax({url:'/notification/count-new-notification'})
+if(response.status=='success'){this.newNotification=response.data.count}else{console.log(response)}},toggle(){this.open=!this.open
+this.fetchData()},async fetchData(){if(this.loading||this.loadedAll){return}
+this.loading=true
+const response=await $.ajax({type:'POST',url:'/notification/list',data:{ignored_ids:this.ignoredIds,ignore_types:['create_cv_success','employer_donate_medal_user','new_job_pro','job_notification_list'],}})
+if(response.status=='success'){response.data.notifications.forEach(noti=>{let index=this.notifications.findIndex(i=>i.id==noti.id)
+if(index==-1){this.notifications.push(noti)}})
+this.loadedAll=response.data.total==0
+setTimeout(()=>{$('.potential_candidate_invitation').off('click');$('.potential_candidate_invitation').on('click',function(e){e.preventDefault();window.handleOpenProRegisterPopupFromNotification(true);window.trackingTopCV.sendShowPopupRegisterProxFromNotification();});},500);}else{console.log(response)}
+this.fetched=true
+this.loading=false}}})

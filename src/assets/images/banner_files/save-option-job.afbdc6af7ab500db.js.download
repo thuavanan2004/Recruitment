@@ -1,0 +1,1 @@
+!function(){var e=function(){var e=localStorage.getItem("option-search");try{return JSON.parse(e)}catch(e){return{}}}()||{},r=new Event("change"),t=e.keyword,a=document.querySelector("#keyword");t&&a&&!a.value&&(a.value=t);var n=Array.isArray(e.locations)?e.locations.shift().id:null,o=document.querySelector("#city");n&&o&&(o.value=n,o.dispatchEvent(r))}();

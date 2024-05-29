@@ -1,0 +1,16 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login form {
+    width: 500px;
+}
+.login .ant-input {
+    width: 100%; /* Make input fields fill the available width */
+}
+.login .ant-btn {
+    background-color: #3BA769;
+    color: aliceblue;
+}

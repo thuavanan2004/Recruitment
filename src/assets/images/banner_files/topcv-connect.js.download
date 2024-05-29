@@ -1,0 +1,2 @@
+if(window.innerWidth<1100){window.elTopConnect="#navbar-mobile #topcv-connect";}else{window.elTopConnect=".navbar #topcv-connect";}
+const TopCVConnect=new Vue({el:window.elTopConnect,data(){return{unreadConversationCount:0}},created(){this.countUnreadConversation();},methods:{async countUnreadConversation(){let{data}=await axios.get('/messages/count-unread-conversation');if(data.success){this.unreadConversationCount=data.count;}}}})
